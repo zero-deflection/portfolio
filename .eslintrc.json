@@ -1,0 +1,33 @@
+{
+  "root": true,
+  "extends": ["eslint:recommended", "plugin:tailwindcss/recommended"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": { "project": ["./tsconfig.json"] },
+  "plugins": ["@typescript-eslint"],
+  "overrides": [
+    {
+      "files": ["*.astro"],
+      "extends": [
+        "plugin:astro/jsx-a11y-recommended",
+        "plugin:astro/recommended"
+      ],
+      "parser": "astro-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser",
+        "extraFileExtensions": [".astro"]
+      }
+    }
+    // {
+    //   "files": ["**/*.ts", "**/*.tsx"],
+    //   "extends": [
+    //     "plugin:react/recommended",
+    //     "plugin:react-hooks/recommended",
+    //     "plugin:@typescript-eslint/recommended",
+    //     "plugin:jsx-a11y/recommended"
+    //   ],
+    //   "parserOptions": {
+    //     "parser": "@typescript-eslint/parser"
+    //   }
+    // }
+  ]
+}
