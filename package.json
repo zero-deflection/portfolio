@@ -6,6 +6,7 @@
     "astro": "astro",
     "build": "npm run tsc && astro build",
     "dev": "astro dev",
+    "format": "prettier --write src/**",
     "lint": "eslint --fix --no-inline-config --cache --max-warnings=0 --ext .astro,.html,.js,.jsx,.md,.mdx,.ts,.tsx src",
     "preview": "astro preview",
     "start": "astro dev",
@@ -30,6 +31,8 @@
     "eslint-plugin-astro": "^0.30.0",
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-tailwindcss": "^3.13.0"
+    "eslint-plugin-tailwindcss": "^3.13.0",
+    "prettier": "^3.1.0",
+    "prettier-plugin-astro": "^0.12.2"
   }
 }
