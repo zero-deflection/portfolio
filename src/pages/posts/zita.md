@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/PostLayout.astro
 title: "An Ode to Zita, Our Czech Fullstack Prodigy"
-publishDate: 2024-01-01
+pubDate: 2024-01-01
 description: "Fullstack in Code, Full Laughs in Life"
 author: "Zita"
 tags: []

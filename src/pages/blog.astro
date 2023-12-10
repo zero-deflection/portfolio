@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 
+const posts = await Astro.glob("../pages/posts/*.md");
 const title = "Blog";
 ---
 
@@ -14,13 +15,17 @@ const title = "Blog";
       journey through the realms of tech sorcery.
     </p>
     <ul class="link-card-grid">
-      <Card
-        href="/posts/introduction"
-        title="Introduction"
-        body="Introducing our blog"
-      />
-      <Card href="/posts/zita" title="Zita" body="Meet Zita." />
-      <Card href="/posts/dan" title="Dan" body="Meet Dan." />
+      {
+        posts
+          .slice(0, 10)
+          .map((post) => (
+            <Card
+              href={post.url}
+              title={post.frontmatter.title}
+              body={post.frontmatter.description}
+            />
+          ))
+      }
     </ul>
   </main>
 </Layout>

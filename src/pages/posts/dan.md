@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/PostLayout.astro
 title: "Meet Dan, Our Code Maestro"
-publishDate: 2024-01-01
+pubDate: 2024-01-01
 description: "Where React Wizardry and Tailwind Charm Collide"
 author: "Zita"
 tags: []
