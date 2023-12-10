@@ -1,0 +1,25 @@
+---
+import { formatDate } from "../lib/date";
+import Layout from "./Layout.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title}>
+  <main>
+    <h1>{frontmatter.title}</h1>
+    <p>Written by {frontmatter.author}</p>
+    <p>Published on {formatDate(frontmatter.publishDate)}</p>
+    <p>{frontmatter.description}</p>
+    {
+      frontmatter.image && (
+        <img
+          src={frontmatter.image.url}
+          width="300"
+          alt={frontmatter.image.alt}
+        />
+      )
+    }
+    <slot />
+  </main>
+</Layout>
