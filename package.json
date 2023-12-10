@@ -32,7 +32,16 @@
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-tailwindcss": "^3.13.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
     "prettier": "^3.1.0",
     "prettier-plugin-astro": "^0.12.2"
+  },
+  "lint-staged": {
+    "src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}": [
+      "npm run format",
+      "npm run lint"
+    ],
+    "src/**/*.{astro,ts,tsx}": "npm run tsc"
   }
 }
