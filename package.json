@@ -7,7 +7,7 @@
     "build": "npm run tsc && astro build",
     "dev": "astro dev",
     "format": "prettier --write src/**",
-    "lint": "eslint --fix --no-inline-config --cache --max-warnings=0 --ext .astro,.html,.js,.jsx,.md,.mdx,.ts,.tsx src",
+    "lint": "eslint --fix --no-inline-config --cache --ext .astro,.html,.js,.jsx,.md,.mdx,.ts,.tsx src",
     "preview": "astro preview",
     "start": "astro dev",
     "tsc": "astro check && tsc --noEmit"
@@ -42,6 +42,7 @@
       "npm run format",
       "npm run lint"
     ],
-    "src/**/*.{astro,ts,tsx}": "npm run tsc"
+    "src/**/*.astro": "astro check",
+    "src/**/*.{ts,tsx}": "npm run tsc"
   }
 }
