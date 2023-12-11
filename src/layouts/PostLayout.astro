@@ -1,6 +1,7 @@
 ---
 import { formatDate } from "../lib/date";
 import Layout from "./Layout.astro";
+import { fade } from "astro:transitions";
 
 const { frontmatter } = Astro.props;
 ---
@@ -8,9 +9,13 @@ const { frontmatter } = Astro.props;
 <Layout title={frontmatter.title}>
   <main>
     <h1>{frontmatter.title}</h1>
-    <p>Written by {frontmatter.author}</p>
+    <p transition:animate={fade({ duration: "2s" })}>
+      Written by {frontmatter.author}
+    </p>
     <p>Published on {formatDate(frontmatter.publishDate)}</p>
-    <p>{frontmatter.description}</p>
+    <p>
+      {frontmatter.description}
+    </p>
     {
       frontmatter.image && (
         <img

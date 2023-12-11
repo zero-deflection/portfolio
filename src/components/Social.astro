@@ -2,7 +2,9 @@
 const { platform, username } = Astro.props;
 ---
 
-<a href={`https://www.${platform}.com/${username}`}>{platform}</a>
+<a transition:animate="slide" href={`https://www.${platform}.com/${username}`}
+  >{platform}</a
+>
 <style>
   a {
     padding: 0.5rem 1rem;
