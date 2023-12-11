@@ -1,7 +1,6 @@
 ---
-layout: ../../layouts/PostLayout.astro
 title: "Hello World!"
-pubDate: 2024-01-01
+publishDate: 2024-01-01
 description: "
                            (o)(o)
                           /     \
