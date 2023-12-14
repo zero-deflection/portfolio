@@ -12,7 +12,10 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html
+  lang="en"
+  class="box-border bg-light-green font-sans text-ultra-dark-green"
+>
   <head
     ><meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -22,19 +25,13 @@ const { title } = Astro.props;
     <title>{title}</title>
     <ViewTransitions />
   </head>
-  <body>
+  <body class="mx-auto my-0 flex min-h-screen w-full flex-col leading-6">
     <Header />
 
-    <slot />
+    <main class="m-auto w-4/5 p-4 text-base">
+      <slot />
+    </main>
 
     <Footer />
-
-    <script>
-      document.addEventListener("astro:page-load", () => {
-        document.querySelector(".hamburger")?.addEventListener("click", () => {
-          document.querySelector(".nav-links")?.classList.toggle("expanded");
-        });
-      });
-    </script>
   </body>
 </html>

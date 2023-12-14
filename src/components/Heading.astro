@@ -1,0 +1,27 @@
+---
+import { slide } from "astro:transitions";
+
+interface Props {
+  title: string;
+  nonSlidingTitle?: string;
+  slidingTitle?: string;
+}
+
+const { title, nonSlidingTitle, slidingTitle } = Astro.props;
+---
+
+<h1
+  class="mb-4 pb-4 text-center text-3xl font-bold text-dark-green sm:text-5xl md:text-7xl"
+>
+  {nonSlidingTitle ? <span>{nonSlidingTitle}</span> : <span>{title}</span>}
+  {
+    slidingTitle && (
+      <span
+        class="text-violet"
+        transition:animate={slide({ duration: "0.9s" })}
+      >
+        {slidingTitle}
+      </span>
+    )
+  }
+</h1>

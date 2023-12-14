@@ -1,32 +1,40 @@
 ---
 import { getCollection } from "astro:content";
 import Card from "../components/Card.astro";
-import Layout from "../layouts/Layout.astro";
+import PageLayout from "../layouts/PageLayout.astro";
 
 const posts = await getCollection("posts");
-const title = "Blog";
 ---
 
-<Layout title={title}>
-  <main>
-    <h1>See our <span class="text-gradient">blogposts</span></h1>
-    <p class="instructions">
-      Reading our blog posts is like decoding a secret message from a team of
-      caffeinated wizards—grab your virtual wand and prepare for a spellbinding
-      journey through the realms of tech sorcery.
-    </p>
-    <ul class="link-card-grid">
-      {
-        posts
-          .slice(0, 10)
-          .map((post) => (
-            <Card
-              href={`/posts/${post.slug}`}
-              title={post.data.title}
-              body={post.data.description}
-            />
-          ))
-      }
-    </ul>
-  </main>
-</Layout>
+<PageLayout
+  title="Blog"
+  heading="See our blogposts"
+  nonSlidingHeading="See our"
+  slidingHeading="blogposts"
+>
+  <p
+    class="my-8 rounded-lg border border-solid border-dark-gray bg-dark-green p-6 text-light-gray"
+  >
+    Reading our blog posts is like decoding a secret message from a team of
+    caffeinated wizards—grab your virtual wand and prepare for a spellbinding
+    journey through the realms of tech sorcery.
+  </p>
+  <ul class="grid grid-cols-blog-posts gap-8 p-0">
+    {
+      posts
+        .sort(
+          (a, b) =>
+            new Date(b.data.publishDate).getTime() -
+            new Date(a.data.publishDate).getTime(),
+        )
+        .slice(0, 10)
+        .map((post) => (
+          <Card
+            href={`/posts/${post.slug}`}
+            title={post.data.title}
+            body={post.data.description}
+          />
+        ))
+    }
+  </ul>
+</PageLayout>

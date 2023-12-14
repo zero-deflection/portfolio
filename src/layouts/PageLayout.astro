@@ -1,0 +1,15 @@
+---
+import Heading from "../components/Heading.astro";
+import Layout from "./Layout.astro";
+
+const { title, heading, nonSlidingHeading, slidingHeading } = Astro.props;
+---
+
+<Layout title={title}>
+  <Heading
+    title={heading}
+    nonSlidingTitle={nonSlidingHeading}
+    slidingTitle={slidingHeading}
+  />
+  <slot />
+</Layout>

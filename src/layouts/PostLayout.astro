@@ -2,34 +2,24 @@
 import { fade } from "astro:transitions";
 import { formatDate } from "../lib/date";
 import Layout from "./Layout.astro";
+import Heading from "../components/Heading.astro";
+import PostInfoPanel from "../components/PostInfoPanel.astro";
 
 const { frontmatter } = Astro.props;
 ---
 
 <Layout title={frontmatter.title}>
-  <main>
-    <h1>{frontmatter.title}</h1>
-    <p transition:animate={fade({ duration: "2s" })}>
+  <Heading title={frontmatter.title} />
+  <Fragment transition:animate={fade({ duration: "1s" })}>
+    <p class="pb-2 text-center">
       Written by {frontmatter.author}
     </p>
-    <p>Published on {formatDate(frontmatter.publishDate)}</p>
-    <p>
-      {frontmatter.description}
+    <p class="text-center">
+      Published on {formatDate(frontmatter.publishDate)}
     </p>
-    {
-      frontmatter.image && (
-        <img
-          src={frontmatter.image.url}
-          width="300"
-          alt={frontmatter.image.alt}
-        />
-      )
-    }
-    <slot />
-  </main>
+    <PostInfoPanel>
+      {frontmatter.description}
+    </PostInfoPanel>
+  </Fragment>
+  <slot />
 </Layout>
-<style>
-  p {
-    font-style: italic;
-  }
-</style>

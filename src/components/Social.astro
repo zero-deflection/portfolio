@@ -1,8 +1,28 @@
 ---
-const { platform, username } = Astro.props;
+import { Image } from "astro:assets";
+import iconGithub from "../assets/icon-github.svg";
+import iconLinkedin from "../assets/icon-linkedin.svg";
+import iconMessenger from "../assets/icon-messenger.svg";
+
+interface Props {
+  platform: "github" | "linkedin" | "messenger";
+  href: string;
+}
+
+const { platform, href } = Astro.props;
+const iconSrc =
+  platform === "github"
+    ? iconGithub
+    : platform === "linkedin"
+      ? iconLinkedin
+      : iconMessenger;
 ---
 
-<a transition:animate="slide" href={`https://www.${platform}.com/${username}`}
+<a href={href}>
+  <Image src={iconSrc} alt={`Icon for ${platform} social site.`} />
+</a>
+
+<!-- <a transition:animate="slide" href={`https://www.${platform}.com/${username}`}
   >{platform}</a
 >
 <style>
@@ -12,4 +32,4 @@ const { platform, username } = Astro.props;
     background-color: #4c1d95;
     text-decoration: none;
   }
-</style>
+</style> -->

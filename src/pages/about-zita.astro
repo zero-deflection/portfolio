@@ -1,24 +1,24 @@
 ---
-import Layout from "../layouts/Layout.astro";
-
-const title = "About Zita";
+import PageLayout from "../layouts/PageLayout.astro";
 ---
 
-<Layout title={title}>
-  <main>
-    <h1>Get to know <span class="text-gradient">Zita</span></h1>
-    <p class="instructions">
-      Zita, the Czech coding sensation, can debug a program with one hand tied
-      behind her back, all while sipping on a cup of absinthe.
-    </p>
-    <p class="instructions">
-      Her code is so clean, it once brought a tear to an old compiler's eye, who
-      never thought it would witness such elegance.
-    </p>
-    <p class="instructions">
-      Rumor has it that Zita's keyboard has a secret admiration mode that
-      activates whenever she starts typing – even the most stoic lines of code
-      can't help but blush.
-    </p>
-  </main>
-</Layout>
+<PageLayout
+  title="About Zita"
+  heading="Get to know Zita"
+  nonSlidingHeading="Get to know"
+  slidingHeading="Zita"
+>
+  <p class="pt-2">
+    Zita, the Czech coding sensation, can debug a program with one hand tied
+    behind her back, all while sipping on a cup of absinthe.
+  </p>
+  <p class="pt-2">
+    Her code is so clean, it once brought a tear to an old compiler's eye, who
+    never thought it would witness such elegance.
+  </p>
+  <p class="pt-2">
+    Rumor has it that Zita's keyboard has a secret admiration mode that
+    activates whenever she starts typing – even the most stoic lines of code
+    can't help but blush.
+  </p>
+</PageLayout>

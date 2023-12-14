@@ -1,21 +1,12 @@
 ---
-import Social from "./Social.astro";
+import { SITE_TITLE } from "../const";
 ---
 
-<footer>
-  <p>
-    Learn more about my projects on
-    <Social platform="twitter" username="astrodotbuild" />
-    <Social platform="github" username="withastro" />
-    <Social platform="youtube" username="astrodotbuild" />
-  </p>
+<footer
+  class="shrink-0 bg-ultra-dark-green text-center text-light-gray lg:text-left"
+>
+  <div class="p-4 text-center">
+    © 2023 Copyright:
+    <a class="uppercase" href="/index">{SITE_TITLE}</a>
+  </div>
 </footer>
-
-<style>
-  footer {
-    color: rgb(var(--accent));
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-</style>
