@@ -174,3 +174,7 @@ html.dark {
 .dark .nav-links a {
   color: #fff;
 }
+
+p {
+  padding-top: 10px;
+}

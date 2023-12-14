@@ -3,7 +3,7 @@
   "extends": ["eslint:recommended", "plugin:tailwindcss/recommended"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": { "project": ["./tsconfig.json"] },
-  "plugins": ["@typescript-eslint", "markdown"],
+  "plugins": ["@typescript-eslint"],
   "overrides": [
     {
       "files": ["*.astro"],
@@ -19,7 +19,14 @@
     },
     {
       "files": ["*.md"],
-      "processor": "markdown/markdown"
+      "extends": ["plugin:markdown/recommended"]
+    },
+    {
+      "files": ["*.mdx"],
+      "extends": ["plugin:mdx/recommended"],
+      "settings": {
+        "mdx/code-blocks": true
+      }
     }
     // {
     //   "files": ["**/*.ts", "**/*.tsx"],
