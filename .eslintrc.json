@@ -8,8 +8,8 @@
     {
       "files": ["*.astro"],
       "extends": [
-        "plugin:astro/jsx-a11y-recommended",
-        "plugin:astro/recommended"
+        "plugin:astro/recommended",
+        "plugin:astro/jsx-a11y-recommended"
       ],
       "parser": "astro-eslint-parser",
       "parserOptions": {
@@ -27,18 +27,24 @@
       "settings": {
         "mdx/code-blocks": true
       }
+    },
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "extends": [
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:jsx-a11y/recommended"
+      ],
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser"
+      },
+      "excludedFiles": ["*.d.ts"],
+      "settings": {
+        "react": {
+          "version": "detect"
+        }
+      }
     }
-    // {
-    //   "files": ["**/*.ts", "**/*.tsx"],
-    //   "extends": [
-    //     "plugin:react/recommended",
-    //     "plugin:react-hooks/recommended",
-    //     "plugin:@typescript-eslint/recommended",
-    //     "plugin:jsx-a11y/recommended"
-    //   ],
-    //   "parserOptions": {
-    //     "parser": "@typescript-eslint/parser"
-    //   }
-    // }
   ]
 }

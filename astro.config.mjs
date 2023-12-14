@@ -1,10 +1,10 @@
-import { defineConfig } from "astro/config";
+import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
-import mdx from "@astrojs/mdx";
+import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [react(), tailwind(), mdx()],
-  site: "http:localhost:4321" // netlify url
+  site: "http:localhost:4321", //TODO: update with production URL
 });
