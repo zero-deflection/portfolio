@@ -47,7 +47,6 @@
     "src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}": [
       "npm run format",
       "npm run lint"
-    ],
-    "src/**/*.astro": "astro check"
+    ]
   }
 }

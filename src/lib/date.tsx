@@ -1,3 +1,3 @@
 export function formatDate(date: Date): string {
-  return date.toString().slice(0, 10);
+  return date.toISOString().slice(0, 10);
 }
