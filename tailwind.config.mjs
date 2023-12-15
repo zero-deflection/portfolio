@@ -25,6 +25,9 @@ export default {
         body: "80ch",
         main: "calc(100% - 2rem)",
       },
+      fontFamily: {
+        custom: ["major mono display", "monospace"],
+      },
     },
   },
   plugins: [],

@@ -5,13 +5,14 @@ interface Props {
   title: string;
   nonSlidingTitle?: string;
   slidingTitle?: string;
+  fontClass?: string;
 }
 
-const { title, nonSlidingTitle, slidingTitle } = Astro.props;
+const { title, nonSlidingTitle, slidingTitle, fontClass } = Astro.props;
 ---
 
 <h1
-  class="mb-4 pb-4 text-center text-3xl font-bold text-dark-green sm:text-5xl md:text-7xl"
+  class=`${fontClass ?? ''} mb-4 pb-4 text-center text-3xl font-bold text-dark-green sm:text-5xl md:text-7xl`
 >
   {nonSlidingTitle ? <span>{nonSlidingTitle}</span> : <span>{title}</span>}
   {
