@@ -18,6 +18,13 @@ export default {
       gridTemplateColumns: {
         "blog-posts": "repeat(auto-fit, minmax(24ch, 1fr))",
       },
+      width: {
+        200: "800px",
+      },
+      maxWidth: {
+        body: "80ch",
+        main: "calc(100% - 2rem)",
+      },
     },
   },
   plugins: [],
