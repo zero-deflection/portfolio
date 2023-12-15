@@ -9,7 +9,7 @@ const { frontmatter } = Astro.props;
 ---
 
 <Layout title={frontmatter.title}>
-  <Heading title={frontmatter.title} />
+  <Heading title={frontmatter.title} className="font-mono uppercase" />
   <Fragment transition:animate={fade({ duration: "1s" })}>
     <p class="pb-2 text-center">
       Written by {frontmatter.author}
