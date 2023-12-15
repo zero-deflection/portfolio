@@ -1,18 +1,11 @@
 ---
-
+import NavigationItem from "./NavigationItem.astro";
 ---
 
-<!-- .nav-links {
-  color: rgb(var(--accent));
-  width: 100%;
-  top: 5rem;
-  left: 48px;
-  background-color: #ff9776;
-  display: none;
-  margin: 0;
-} -->
-<div class="left-12 top-20 m-0 w-full uppercase text-violet">
-  <a href="/">Home</a>
-  <a href="/about-zita/">About Zita</a>
-  <a href="/blog/">Blog</a>
+<div
+  class="left-12 top-20 m-5 grid w-full text-center uppercase text-violet sm:inline-block"
+>
+  <NavigationItem title="Home" href="/" />
+  <NavigationItem title="About Zita" href="/about-zita/" />
+  <NavigationItem title="Blog" href="/blog/" />
 </div>
