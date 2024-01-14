@@ -24,6 +24,9 @@
     {
       "files": ["*.mdx"],
       "extends": ["plugin:mdx/recommended"],
+      "rules": {
+        "react/jsx-uses-vars": "error"
+      },
       "settings": {
         "mdx/code-blocks": true
       }
