@@ -3,8 +3,8 @@ import "@fontsource/major-mono-display";
 import "@fontsource/roboto";
 import "@fontsource/roboto-mono";
 import { ViewTransitions } from "astro:transitions";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
 
 interface Props {
   title: string;
@@ -27,7 +27,7 @@ const { title } = Astro.props;
     <ViewTransitions />
   </head>
   <body
-    class="flex h-screen flex-col bg-light-green font-sans leading-6 text-ultra-dark-green"
+    class="flex h-screen flex-col bg-white font-sans leading-6 text-ultra-dark-green"
   >
     <Header />
 

@@ -1,9 +1,14 @@
 ---
 import { fade } from "astro:transitions";
-import Heading from "../components/Heading.astro";
-import PostInfoPanel from "../components/PostInfoPanel.astro";
-import { formatDate } from "../lib/date";
+import Heading from "@components/Heading.astro";
+import PostInfoPanel from "@components/PostInfoPanel.astro";
+import { formatDate } from "@lib/date";
 import Layout from "./Layout.astro";
+import type { CollectionEntry } from "astro:content";
+
+type Props = {
+  frontmatter: CollectionEntry<"posts">["data"];
+};
 
 const { frontmatter } = Astro.props;
 ---
