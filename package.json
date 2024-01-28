@@ -10,7 +10,8 @@
     "lint": "eslint --fix --no-inline-config --max-warnings=0 --cache --ext .astro,.html,.js,.jsx,.md,.mdx,.ts,.tsx src",
     "preview": "astro preview",
     "start": "astro dev",
-    "typecheck": "astro check"
+    "typecheck": "astro check",
+    "prepare": "husky"
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
@@ -41,7 +42,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-tailwindcss": "^3.14.1",
-    "husky": "^8.0.3",
+    "husky": "^9.0.6",
     "lint-staged": "^15.2.0",
     "prettier": "^3.1.0",
     "prettier-plugin-astro": "^0.12.2"
