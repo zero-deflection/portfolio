@@ -1,11 +1,18 @@
 ---
 import { getCollection } from "astro:content";
-import Card from "@components/Card.astro";
 import { SITE_TITLE } from "@lib/const";
 import PageLayout from "@layouts/PageLayout.astro";
 import InfoPanel from "@components/InfoPanel.astro";
+import BlogPostCards from "@components/BlogPostCards.astro";
 
 const posts = await getCollection("posts");
+const latestPosts = posts
+  .sort(
+    (a, b) =>
+      new Date(b.data.publishDate).getTime() -
+      new Date(a.data.publishDate).getTime(),
+  )
+  .slice(0, 10);
 ---
 
 <PageLayout
@@ -21,22 +28,5 @@ const posts = await getCollection("posts");
     wonders of our programmer's paradise. Fasten your seatbelts – the Ctrl is
     about to get out of hand!
   </InfoPanel>
-  <ul class="grid grid-cols-blog-posts gap-8 p-0">
-    {
-      posts
-        .sort(
-          (a, b) =>
-            new Date(b.data.publishDate).getTime() -
-            new Date(a.data.publishDate).getTime(),
-        )
-        .slice(0, 10)
-        .map((post) => (
-          <Card
-            href={`/posts/${post.slug}`}
-            title={post.data.title}
-            body={post.data.description}
-          />
-        ))
-    }
-  </ul>
+  <BlogPostCards posts={latestPosts} />
 </PageLayout>

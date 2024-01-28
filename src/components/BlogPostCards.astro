@@ -1,0 +1,25 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+type Props = {
+  posts: CollectionEntry<"posts">[];
+};
+
+const { posts } = Astro.props;
+---
+
+<ul class="grid grid-cols-blog-posts gap-8">
+  {
+    posts.map((post) => (
+      <li class="rounded-lg border border-solid border-medium-gray bg-medium-green shadow hover:text-violet">
+        <a href={`/posts/${post.slug}`} class="block rounded-lg p-6">
+          <h2 class="text-xl font-semibold">
+            {post.data.title}
+            <span>&nbsp;&rarr;</span>
+          </h2>
+          <p class="mt-2 text-ultra-dark-green">{post.data.description}</p>
+        </a>
+      </li>
+    ))
+  }
+</ul>

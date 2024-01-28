@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
-import Card from "@components/Card.astro";
 import PageLayout from "@layouts/PageLayout.astro";
+import BlogPostCards from "@components/BlogPostCards.astro";
 
 const posts = await getCollection("posts");
 ---
@@ -19,22 +19,5 @@ const posts = await getCollection("posts");
     caffeinated wizards—grab your virtual wand and prepare for a spellbinding
     journey through the realms of tech sorcery.
   </p>
-  <ul class="grid grid-cols-blog-posts gap-8 p-0">
-    {
-      posts
-        .sort(
-          (a, b) =>
-            new Date(b.data.publishDate).getTime() -
-            new Date(a.data.publishDate).getTime(),
-        )
-        .slice(0, 10)
-        .map((post) => (
-          <Card
-            href={`/posts/${post.slug}`}
-            title={post.data.title}
-            body={post.data.description}
-          />
-        ))
-    }
-  </ul>
+  <BlogPostCards posts={posts} />
 </PageLayout>
