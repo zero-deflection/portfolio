@@ -4,16 +4,16 @@
   "version": "0.0.1",
   "scripts": {
     "astro": "astro",
-    "build": "npm run tsc && astro build",
+    "build": "npm run typecheck && astro build",
     "dev": "astro dev",
     "format": "prettier --write src/**",
     "lint": "eslint --fix --no-inline-config --max-warnings=0 --cache --ext .astro,.html,.js,.jsx,.md,.mdx,.ts,.tsx src",
     "preview": "astro preview",
     "start": "astro dev",
-    "tsc": "astro check && tsc --noEmit"
+    "typecheck": "astro check"
   },
   "dependencies": {
-    "@astrojs/check": "^0.3.1",
+    "@astrojs/check": "^0.4.1",
     "@astrojs/mdx": "^2.0.1",
     "@astrojs/react": "^3.0.7",
     "@astrojs/rss": "^4.0.1",
