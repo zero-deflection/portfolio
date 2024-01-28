@@ -1,9 +1,33 @@
 ---
-import NavigationItem from "./NavigationItem.astro";
+const links = [
+  {
+    title: "Home",
+    href: "/",
+  },
+  {
+    title: "About Zita",
+    href: "/about-zita/",
+  },
+  {
+    title: "Blog",
+    href: "/blog/",
+  },
+];
 ---
 
-<div class="flex w-full flex-col justify-center p-5 sm:flex-row">
-  <NavigationItem title="Home" href="/" />
-  <NavigationItem title="About Zita" href="/about-zita/" />
-  <NavigationItem title="Blog" href="/blog/" />
-</div>
+<nav>
+  <ul class="flex w-full flex-col justify-center p-5 sm:flex-row">
+    {
+      links.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class="block p-5 text-center text-xl font-bold uppercase text-violet hover:bg-medium-green"
+          >
+            {link.title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
